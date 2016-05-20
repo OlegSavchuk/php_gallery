@@ -21,7 +21,7 @@ $photos = Photograph::find_all();
         </tr>
         <?php foreach($photos as $photo): ?>
             <tr>
-                <td><img src="../<?php echo $photo->image_path(); ?>" width="100" /></td>
+                <td><img src="../<?php echo $photo->image_list_path(); ?>" width="100" /></td>
                 <td><?php echo $photo->filename; ?></td>
                 <td><?php echo $photo->caption; ?></td>
                 <td><?php echo $photo->size_as_text(); ?></td>

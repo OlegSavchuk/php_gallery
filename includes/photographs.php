@@ -9,7 +9,8 @@ class Photograph extends DatabaseObject{
     public $size;
     public $caption;
     private $temp_path;
-    protected $upload_dir="images";
+    protected $upload_dir="public/images";
+    protected $upload_list_dir="images";
     public $errors=array();
 
     protected $upload_errors = array(
@@ -38,6 +39,9 @@ class Photograph extends DatabaseObject{
 
     public function image_path(){
         return $this->upload_dir.DS.$this->filename;
+    }
+    public function image_list_path(){
+        return $this->upload_list_dir.DS.$this->filename;
     }
 
     // Pass in $_FILE(['uploaded_file']) as an argument
